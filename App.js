@@ -7,13 +7,6 @@ const API_KEY = "ab9c0c8c00a396595fe9e690d55b8f9d";
 export default class App extends Component {
   state = {
     isLoaded: false,
-<<<<<<< HEAD
-    error: null
-  };
-  componentDidMount() { 
-      navigator.geolocation.getCurrentPosition(position => {
-          this.setState({error:"someting"})
-=======
     error: null,
     temperature:null,
     name:null
@@ -21,15 +14,12 @@ export default class App extends Component {
   componentDidMount() { 
       navigator.geolocation.getCurrentPosition(position => {
           this._getWeather(position.coords.latitude, position.coords.longitude)
->>>>>>> get weather data by open weather map api
         },
         error => {
           this.setState({error:error})
         }
       )
   }
-<<<<<<< HEAD
-=======
 
   _getWeather(lat, long) {
     fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&APPID=${API_KEY}`)
@@ -43,7 +33,6 @@ export default class App extends Component {
       })
     })
   }
->>>>>>> get weather data by open weather map api
   
   render() {
     const {isLoaded, error} = this.state;
